@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "commit": "git-cz"
+    "commit": "cz"
   },
   "dependencies": {
     "next": "11.1.2",
@@ -23,5 +23,10 @@
     "eslint-config-next": "11.1.2",
     "husky": "^7.0.0",
     "typescript": "4.4.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
