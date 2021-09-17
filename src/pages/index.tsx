@@ -1,10 +1,11 @@
 import type { NextPage } from "next";
+import SideBar from "../components/SideBar";
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <h1>Hello world</h1>
-    </div>
+    <>
+      <SideBar />
+    </>
   );
 };
 
