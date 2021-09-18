@@ -1,6 +1,8 @@
+/* eslint-disable @next/next/link-passhref */
 import Image from "next/image";
 
-import iconHome from "../../assets/home-solid.svg";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 import { Container } from "./styles";
 
@@ -10,11 +12,17 @@ type CardVarProps = {
 };
 
 export default function CardNav({ text, svg }: CardVarProps) {
+  const router = useRouter();
+
   return (
-    <Container>
-      <div className="icon">{svg}</div>
-      {text}
-      <div className="box-active"></div>
+    <Container className={router.pathname == "/" ? "active" : ""}>
+      <Link href="/">
+        <a>
+          <div className="icon">{svg}</div>
+          {text}
+          <div className="box-active"></div>
+        </a>
+      </Link>
     </Container>
   );
 }
