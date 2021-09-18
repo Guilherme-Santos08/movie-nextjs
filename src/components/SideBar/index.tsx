@@ -13,6 +13,7 @@ export default function SideBar() {
         <ul>
           <p>Menu</p>
           <CardNav
+          routers="/"
             text="Home"
             svg={
               <svg
@@ -33,6 +34,7 @@ export default function SideBar() {
             }
           />
           <CardNav
+            routers="movies"
             text="Filmes"
             svg={
               <svg
@@ -53,6 +55,7 @@ export default function SideBar() {
             }
           />
           <CardNav
+            routers="series"
             text="Series"
             svg={
               <svg
@@ -73,6 +76,7 @@ export default function SideBar() {
             }
           />
           <CardNav
+            routers="people"
             text="Pessoas"
             svg={
               <svg

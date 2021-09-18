@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.li`
-  .active {
-    background-color: black;
-    svg {
-      color: ${props => props.theme.colors.secondary};
-    }
-    .box-active {
-      background-color: ${props => props.theme.colors.secondary};
-    }
-  }
   a {
+    &.active {
+      background-color: rgba(255, 255, 255, 6%);
+
+      svg {
+        color: ${props => props.theme.colors.secondary};
+      }
+      .box-active {
+        background-color: ${props => props.theme.colors.secondary};
+      }
+    }
     display: flex;
     align-items: center;
     color: ${props => props.theme.colors.text};

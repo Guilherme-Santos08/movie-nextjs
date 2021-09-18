@@ -9,15 +9,16 @@ import { Container } from "./styles";
 type CardVarProps = {
   text?: String;
   svg: any;
+  routers: String;
 };
 
-export default function CardNav({ text, svg }: CardVarProps) {
+export default function CardNav({ text, svg, routers }: CardVarProps) {
   const router = useRouter();
 
   return (
-    <Container className={router.pathname == "/" ? "active" : ""}>
-      <Link href="/">
-        <a>
+    <Container>
+      <Link href={`/${routers}`}>
+        <a className={router.pathname == `${routers}` ? "active" : ""}>
           <div className="icon">{svg}</div>
           {text}
           <div className="box-active"></div>
