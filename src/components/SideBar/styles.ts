@@ -7,12 +7,12 @@ export const Container = styled.aside`
   padding: 1rem;
 
   .logo {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     font-weight: bold;
     cursor: default;
     > div {
       background-color: ${props => props.theme.colors.secondary};
-      width: 54%;
+      width: 50%;
       height: 0.5rem;
       border-radius: 8px;
     }
