@@ -6,13 +6,13 @@ import Link from "next/link";
 
 import { Container } from "./styles";
 
-type CardVarProps = {
+type CardNavProps = {
   text?: String;
   svg: any;
   routers: String;
 };
 
-export default function CardNav({ text, svg, routers }: CardVarProps) {
+export default function CardNav({ text, svg, routers }: CardNavProps) {
   const router = useRouter();
   console.log(router.pathname.toString());
 
