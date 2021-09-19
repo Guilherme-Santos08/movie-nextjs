@@ -34,7 +34,7 @@ export default function SideBar() {
             }
           />
           <CardNav
-            routers="movies"
+            routers="/movies"
             text="Filmes"
             svg={
               <svg
@@ -55,8 +55,8 @@ export default function SideBar() {
             }
           />
           <CardNav
-            routers="series"
-            text="Series"
+            routers="/series"
+            text="Séries"
             svg={
               <svg
                 aria-hidden="true"
@@ -76,7 +76,7 @@ export default function SideBar() {
             }
           />
           <CardNav
-            routers="people"
+            routers="/people"
             text="Pessoas"
             svg={
               <svg

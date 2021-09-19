@@ -14,11 +14,14 @@ type CardVarProps = {
 
 export default function CardNav({ text, svg, routers }: CardVarProps) {
   const router = useRouter();
+  console.log(router.pathname.toString());
 
   return (
     <Container>
-      <Link href={`/${routers}`}>
-        <a className={router.pathname == `${routers}` ? "active" : ""}>
+      <Link href={`${routers ? routers : "/"}`}>
+        <a
+          className={router.pathname == `${routers}` ? "active" : ""} 
+        >
           <div className="icon">{svg}</div>
           {text}
           <div className="box-active"></div>
