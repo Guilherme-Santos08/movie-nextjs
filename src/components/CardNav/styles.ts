@@ -20,7 +20,7 @@ export const Container = styled.li`
     display: flex;
     align-items: center;
     color: ${props => props.theme.colors.text};
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
 
     padding: 1rem;
@@ -40,7 +40,7 @@ export const Container = styled.li`
     }
 
     svg {
-      width: 1.6rem;
+      width: 1.4rem;
       color: ${props => props.theme.colors.text};
       margin-right: 1rem;
       transition: all 0.2s ease-in-out;

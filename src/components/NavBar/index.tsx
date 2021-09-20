@@ -4,12 +4,12 @@ import { Container } from "./styles";
 export default function SideBar() {
   return (
     <Container>
-      <div className="logo">
-        <p>DzScript</p>
-        <div></div>
-      </div>
-
       <nav>
+        <div className="logo">
+          <p>DzScript</p>
+          <div></div>
+        </div>
+
         <ul>
           <CardNav
             routers="/"
