@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import ShowScroll from "../components/ShowScroll";
-import SideBar from "../components/SideBar";
+import SideBar from "../components/NavBar";
 
 import { Container } from "../styles/pages/Home";
 

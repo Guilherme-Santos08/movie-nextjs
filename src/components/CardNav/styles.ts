@@ -9,7 +9,12 @@ export const Container = styled.li`
         color: ${props => props.theme.colors.secondary};
       }
       .box-active {
-        background-color: ${props => props.theme.colors.secondary};
+        /* background-color: ${props => props.theme.colors.secondary}; */
+      }
+
+      &::after {
+        transform: scale(1);
+        transform-origin: bottom left;
       }
     }
     display: flex;
@@ -30,7 +35,7 @@ export const Container = styled.li`
         color: ${props => props.theme.colors.secondary};
       }
       .box-active {
-        background-color: ${props => props.theme.colors.secondary};
+        /* background-color: ${props => props.theme.colors.secondary}; */
       }
     }
 

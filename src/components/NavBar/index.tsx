@@ -11,9 +11,8 @@ export default function SideBar() {
 
       <nav>
         <ul>
-          <p>Menu</p>
           <CardNav
-          routers="/"
+            routers="/"
             text="Home"
             svg={
               <svg
