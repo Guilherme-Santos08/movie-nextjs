@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.article`
 
   .card-content {
-    width: 190px;
+    max-width: 100%;
     cursor: pointer;
     transition: opacity .2s ease-in-out;
 

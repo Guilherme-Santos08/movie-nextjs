@@ -1,12 +1,18 @@
-import Image from "next/image";
-import spiderMan from "../../assets/spider-man.jpg";
+/* eslint-disable @next/next/no-img-element */
+// import Image from "next/image";
 import { Container } from "./styles";
 
-export default function CardContents() {
+const ImgMovie = "https://image.tmdb.org/t/p/w500/";
+
+type CardImage = {
+  image: any;
+};
+
+export default function CardContents({ image }: CardImage) {
   return (
     <Container>
       <div className="card-content">
-        <Image src={spiderMan} alt="" />
+      <img src={ImgMovie + image} alt="" />
       </div>
     </Container>
   );

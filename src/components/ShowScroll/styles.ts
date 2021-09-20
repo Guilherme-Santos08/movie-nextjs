@@ -4,7 +4,7 @@ export const Container = styled.section`
   margin-top: 4rem;
   .scroll {
     display: flex;
-    margin: 1.2rem 0;
+    margin-top: 1.6rem;
 
     gap: 10px;
     overflow-y: auto;

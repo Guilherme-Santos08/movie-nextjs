@@ -14,8 +14,6 @@ type CardNavProps = {
 
 export default function CardNav({ text, svg, routers }: CardNavProps) {
   const router = useRouter();
-  console.log(router.pathname.toString());
-
   return (
     <Container>
       <Link href={`${routers ? routers : "/"}`}>

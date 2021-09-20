@@ -1,21 +1,15 @@
-import CardContents from "../CardContents";
 import { Container } from "./styles";
 
-export default function ShowScroll() {
+interface ScrollProps {
+  name: String;
+  children: JSX.Element | JSX.Element[] | {};
+}
+
+export default function ShowScroll({ children, name }: ScrollProps) {
   return (
     <Container>
-      <h3>Movies</h3>
-
-      <div className="scroll">
-        <CardContents />
-        <CardContents />
-        <CardContents />
-        <CardContents />
-        <CardContents />
-        <CardContents />
-        <CardContents />
-        <CardContents />
-      </div>
+      <h3>{name}</h3>
+      <div className="scroll">{children}</div>
     </Container>
   );
 }
