@@ -1,16 +1,23 @@
 import styled from "styled-components";
 
 export const Container = styled.article`
-  .card-content {
-    width: 190px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+  &:hover {
+    opacity: 0.8;
+  }
+  img {
+    min-width: 147px;
+    max-width: 147px;
+    background-size: cover;
     cursor: pointer;
-    transition: opacity .2s ease-in-out;
+    transition: 0.5s ease;
+    z-index: 9999;
+    border-radius: 8px;
+
     &:hover {
-      opacity: .8;
-    }
-    img {
-      width: 100%;
-      border-radius: 8px;
+      transform: scale(1.2);
+      z-index: 2;
     }
   }
 `;

@@ -5,11 +5,9 @@ export const Container = styled.div`
   flex-direction: column;
   /* width: 100%; */
 
-
   main {
     padding: 16px;
     max-width: 1380px;
-    margin: 0 auto;
     margin-top: 6rem;
   }
   .show-moment {
@@ -18,5 +16,9 @@ export const Container = styled.div`
     height: 250px;
     background-color: #fff;
     border-radius: 8px;
+  }
+
+  .carousel {
+   
   }
 `;

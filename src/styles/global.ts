@@ -13,6 +13,6 @@ export default createGlobalStyle`
     color: ${props => props.theme.colors.text};
     font-size: 16px;
     font-family: "Roboto", sans-serif;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
   }
 `;

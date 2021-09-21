@@ -11,9 +11,7 @@ type CardImage = {
 export default function CardContents({ image }: CardImage) {
   return (
     <Container>
-      <div className="card-content">
       <img src={ImgMovie + image} alt="" />
-      </div>
     </Container>
   );
 }
