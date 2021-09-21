@@ -1,3 +1,5 @@
+import "netslider/dist/styles.min.css";
+
 import { Container } from "./styles";
 
 interface ScrollProps {
@@ -5,7 +7,7 @@ interface ScrollProps {
   children: JSX.Element | JSX.Element[] | {};
 }
 
-export default function ShowScroll({ children, name }: ScrollProps) {
+export default function SlideScroll({ children, name }: ScrollProps) {
   return (
     <Container>
       <h3>{name}</h3>

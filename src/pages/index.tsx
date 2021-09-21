@@ -2,7 +2,7 @@ import { GetStaticProps } from "next";
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import ShowScroll from "../components/ShowScroll";
+import ShowScroll from "../components/SlideScroll";
 import SideBar from "../components/NavBar";
 import { Container } from "../styles/pages/Home";
 import { apiMain } from "./api/api";
@@ -37,7 +37,7 @@ function Home({ movies }: MoviesProps) {
       <Container>
         <SideBar />
         <main>
-          <div className="show-moment"></div>
+          {/* <div className="show-moment"></div> */}
           <ShowScroll name="Filmes">
             {movies.length > 0 &&
               movies.map((movie: any, index: any) => (

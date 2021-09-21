@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   margin-top: 4rem;
+  width: 100%;
   .scroll {
     display: flex;
     margin-top: 1.6rem;
 
     gap: 10px;
-    overflow-y: auto;
+    overflow-x: scroll;
 
     ::-webkit-scrollbar {
       width: 2px; /* Remove scrollbar space */
