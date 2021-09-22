@@ -1,4 +1,4 @@
-<h1 align="center">Pomodoro ReactJs</h1>
+<h1 align="center">Movie Nextjs</h1>
 
 <p align="center">
   <a href="#-sobre">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
