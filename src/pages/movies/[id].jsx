@@ -3,6 +3,7 @@ import Head from "next/head";
 
 import { useRouter } from "next/router";
 import { apiMain } from "../api/api";
+import LayoutDetails from "../../components/LayoutDetails";
 
 function MoviesId({ result }) {
   console.log(result);
@@ -23,11 +24,17 @@ function MoviesId({ result }) {
   return (
     <>
       <Head>
-        <title>{result.title}</title>
+        <title>{result.name}</title>
       </Head>
-      <p>nome do filme: {result.title}</p>
-      <p>data de lançamento: {result.release_date}</p>
-      <p>votos: {result.vote_average}/10</p>
+      <LayoutDetails
+        title={result.name}
+        release_date={result.release_date}
+        vote_average={result.vote_average}
+        overview={result.overview}
+        poster_path={result.poster_path}
+        genres={result.genres.map(e => e.name)}
+        tagline={result.tagline}
+      />
     </>
   );
 }
@@ -38,10 +45,9 @@ export async function getServerSideProps(context) {
   const { id } = context.query;
 
   const respMovie = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=40698a7bda352049c103b665527f1793&language=en-US&append_to_response=videos`
+    `https://api.themoviedb.org/3/movie/${id}?api_key=40698a7bda352049c103b665527f1793&language=pt-BR&append_to_response=videos`
   );
   const data = await respMovie.json();
-
 
   return {
     props: {
