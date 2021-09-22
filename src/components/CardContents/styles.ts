@@ -3,6 +3,12 @@ import styled from "styled-components";
 export const Container = styled.article`
   cursor: pointer;
   transition: opacity 0.2s ease-in-out;
+
+  a {
+    width: 100%;
+    height: 100%;
+  }
+
   &:hover {
     opacity: 0.8;
   }

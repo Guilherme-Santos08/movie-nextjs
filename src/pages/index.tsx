@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Key, useEffect, useRef, useState } from "react";
 import Head from "next/head";
 
 import axios from "axios";
@@ -39,15 +39,29 @@ function Home({ movies }: MoviesProps) {
           <div className="show-moment"></div>
           <ScrollCarousel name="Top 10 Filmes">
             {movies.length > 0 &&
-              movies.map((movie: any, index: any) => (
-                <CardContents key={index} image={movie.poster_path} />
-              ))}
+              movies.map(
+                (movie: { poster_path: String; id: Number }, index: Key) => (
+                  <CardContents
+                    key={index}
+                    image={movie.poster_path}
+                    link={movie.id}
+                    path="movies"
+                  />
+                )
+              )}
           </ScrollCarousel>
           <ScrollCarousel name="Top 10 Séries">
             {series.length > 0 &&
-              series.map((movie: any, index: any) => (
-                <CardContents key={index} image={movie.poster_path} />
-              ))}
+              series.map(
+                (serie: { poster_path: String; id: Number }, index: Key) => (
+                  <CardContents
+                    key={index}
+                    image={serie.poster_path}
+                    link={serie.id}
+                    path="series"
+                  />
+                )
+              )}
           </ScrollCarousel>
         </main>
       </Container>
@@ -59,7 +73,7 @@ export async function getStaticProps() {
   const respMovie = await apiMain.get(
     "movie/popular?api_key=40698a7bda352049c103b665527f1793&language=en-US&page=1"
   );
-  const respDataMovie = respMovie.data.results.slice(0, 10);
+  const respDataMovie = await respMovie.data.results.slice(0, 10);
 
   return {
     props: { movies: respDataMovie },

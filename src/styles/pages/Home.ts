@@ -7,7 +7,6 @@ export const Container = styled.div`
 
   main {
     padding: 16px;
-    max-width: 1380px;
     margin-top: 6rem;
   }
   .show-moment {
