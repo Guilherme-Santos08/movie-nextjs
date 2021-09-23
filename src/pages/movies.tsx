@@ -8,9 +8,8 @@ import CardContents from "../components/CardContents";
 import { useList } from "../hooks/useList";
 
 export default function Movies() {
-  const { movieList, handleNextClick, handlePrevClick, moviePages, setPath } = useList();
-  setPath("movie");
-  
+  const { list, handleNextClick, handlePrevClick, pages } = useList();
+
   return (
     <>
       <Head>
@@ -20,10 +19,10 @@ export default function Movies() {
       <LayoutFlexWrap
         handleNextClick={handleNextClick}
         handlePrevClick={handlePrevClick}
-        pages={moviePages}
+        pages={pages}
       >
-        {movieList.length > 0 &&
-          movieList.map((movie: cardContextProps, index: Key) => (
+        {list.length > 0 &&
+          list.map((movie: cardContextProps, index: Key) => (
             <CardContents
               key={index}
               image={movie.poster_path}

@@ -8,44 +8,54 @@ interface listProviderProps {
 interface list {
   handlePrevClick: () => void;
   handleNextClick: () => void;
-  setPath: any;
-  movieList: any;
-  moviePages: Number;
+  list: any;
+  listSeries: any;
+  pages: Number;
 }
 
 export const ListContext = createContext({} as list);
 
 export function ListContextProvider({ children }: listProviderProps) {
-  const [moviePages, setMoviePages] = useState(1);
-  const [movieList, setMovieList] = useState([]);
-  const [path, setPath] = useState("")
-  console.log(movieList);
+  const [pages, setPages] = useState(1);
+  const [list, setList] = useState([]);
+  const [listSeries, setListSeries] = useState([]);
 
   useEffect(() => {
     const fetchMovie = async () => {
       const resp = await apiMain.get(
-        `${path ? path : "movie"}/popular?api_key=40698a7bda352049c103b665527f1793&language=en-US&page=${moviePages}`
+        `movie/popular?api_key=40698a7bda352049c103b665527f1793&language=en-US&page=${pages}`
       );
-      const respData = resp.data.results;
-      setMovieList(respData);
+      const respData = await resp.data.results;
+      setList(respData);
     };
     fetchMovie();
-  }, [moviePages, path]);
+  }, [pages]);
+
+  useEffect(() => {
+    const fetchMovie = async () => {
+      const resp = await apiMain.get(
+        `tv/popular?api_key=40698a7bda352049c103b665527f1793&language=en-US&page=${pages}`
+      );
+      const respData = await resp.data.results;
+      setListSeries(respData);
+    };
+    fetchMovie();
+  }, [pages]);
 
   const handleNextClick = () => {
-    setMoviePages(moviePages + 1);
+    setPages(pages + 1);
   };
 
   const handlePrevClick = () => {
-    setMoviePages(moviePages - 1);
-    if (moviePages <= 1) {
-      setMoviePages(1);
+    setPages(pages - 1);
+    if (pages <= 1) {
+      setPages(1);
     }
   };
 
   return (
     <ListContext.Provider
-      value={{ handleNextClick, handlePrevClick, movieList, moviePages, setPath }}
+      value={{ handleNextClick, handlePrevClick, list, pages, listSeries }}
     >
       {children}
     </ListContext.Provider>
