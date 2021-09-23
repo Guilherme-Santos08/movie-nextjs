@@ -9,8 +9,8 @@ function SeriesDetails({ result }) {
         <title>{result.title}</title>
       </Head>
       <LayoutDetails
-        title={result.title}
-        release_date={result.release_date}
+        title={result.original_name}
+        release_date={result.first_air_date}
         vote_average={result.vote_average}
         overview={result.overview}
         poster_path={result.poster_path}
