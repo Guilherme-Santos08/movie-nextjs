@@ -8,6 +8,9 @@ export default createGlobalStyle`
     list-style: none;
     text-decoration: none;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.text};

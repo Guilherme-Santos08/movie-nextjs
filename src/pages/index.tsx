@@ -9,6 +9,7 @@ import ScrollCarousel from "../components/ScrollCarousel";
 import CardContents from "../components/CardContents";
 
 import { Container } from "../styles/pages/Home";
+import { cardContextProps } from "../interfaces/interfaces";
 
 interface MoviesProps {
   movies?: any;
@@ -39,29 +40,25 @@ function Home({ movies }: MoviesProps) {
           <div className="show-moment"></div>
           <ScrollCarousel name="Top 10 Filmes">
             {movies.length > 0 &&
-              movies.map(
-                (movie: { poster_path: String; id: Number }, index: Key) => (
-                  <CardContents
-                    key={index}
-                    image={movie.poster_path}
-                    link={movie.id}
-                    path="movies"
-                  />
-                )
-              )}
+              movies.map((movie: cardContextProps, index: Key) => (
+                <CardContents
+                  key={index}
+                  image={movie.poster_path}
+                  link={movie.id}
+                  path="movies"
+                />
+              ))}
           </ScrollCarousel>
           <ScrollCarousel name="Top 10 Séries">
             {series.length > 0 &&
-              series.map(
-                (serie: { poster_path: String; id: Number }, index: Key) => (
-                  <CardContents
-                    key={index}
-                    image={serie.poster_path}
-                    link={serie.id}
-                    path="series"
-                  />
-                )
-              )}
+              series.map((serie: cardContextProps, index: Key) => (
+                <CardContents
+                  key={index}
+                  image={serie.poster_path}
+                  link={serie.id}
+                  path="series"
+                />
+              ))}
           </ScrollCarousel>
         </main>
       </Container>
