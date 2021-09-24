@@ -1,11 +1,10 @@
-import React from "react";
 import Document, {
-  DocumentInitialProps,
   DocumentContext,
-  Html,
-  Head,
+  DocumentInitialProps,
   Main,
   NextScript,
+  Head,
+  Html,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
@@ -37,9 +36,9 @@ export default class MyDocument extends Document {
     }
   }
 
-  render(): JSX.Element {
+  render() {
     return (
-      <Html lang="pt">
+      <Html lang="pt-BR">
         <Head>
           <meta charSet="utf-8" />
           <link
