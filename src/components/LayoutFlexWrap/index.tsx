@@ -1,8 +1,5 @@
-import { Children, Key, useEffect, useState } from "react";
-import { cardContextProps } from "../../interfaces/interfaces";
-
-import { apiMain } from "../../pages/api/api";
-import CardContents from "../CardContents";
+import { useEffect } from "react";
+import { useList } from "../../hooks/useList";
 
 import { Container } from "./styles";
 
@@ -11,6 +8,7 @@ interface LayoutChildren {
   handlePrevClick: () => void;
   handleNextClick: () => void;
   pages: Number;
+  valueOption?: string | number | readonly string[] | undefined;
 }
 
 export default function LayoutFlexWrap({
@@ -18,7 +16,10 @@ export default function LayoutFlexWrap({
   handlePrevClick,
   handleNextClick,
   pages,
+  valueOption,
 }: LayoutChildren) {
+  const { selects, setSelects, searchMovies } = useList();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [handlePrevClick, handleNextClick]);
@@ -28,7 +29,23 @@ export default function LayoutFlexWrap({
       <Container>
         <div className="input-search">
           {/* Usar onChange e value */}
-          <input type="text" placeholder="O que procura ?" />
+          <input
+            type="text"
+            placeholder="O que procura ?"
+          />
+        </div>
+
+        <div className="filter">
+          <label htmlFor="cars">O que você deseja? </label>
+          <select
+            id="cars"
+            value={selects}
+            onChange={e => setSelects(e.target.value)}
+          >
+            <option value="popular">Mais Populares</option>
+            <option value="top_rated">Mais votados</option>
+            {valueOption && <option value="now_playing">Lançamentos</option>}
+          </select>
         </div>
 
         <div className="movies">

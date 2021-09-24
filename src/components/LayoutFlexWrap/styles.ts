@@ -21,6 +21,44 @@ export const Container = styled.div`
     }
   }
 
+  .filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  select {
+    font-size: .9rem;
+    font-weight: bold;
+    display: inline-block;
+
+    color: #000;
+    margin-top: 0.4rem;
+
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: ${props => props.theme.colors.secondary};
+    color: #fff;
+    /* appearance: none; */
+
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+
+    & option {
+      cursor: pointer;
+    }
+
+    &::-ms-expand {
+      /* display: none; */
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
   .movies {
     display: flex;
     flex-wrap: wrap;

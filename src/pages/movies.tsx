@@ -20,6 +20,7 @@ export default function Movies() {
         handleNextClick={handleNextClick}
         handlePrevClick={handlePrevClick}
         pages={pages}
+        valueOption={"now_playing"}
       >
         {list.length > 0 &&
           list.map((movie: cardContextProps, index: Key) => (
