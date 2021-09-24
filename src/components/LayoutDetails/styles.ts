@@ -34,14 +34,36 @@ export const Container = styled.div`
   .info {
     margin-top: 2.8rem;
     padding-left: 2rem;
+    button {
+      width: 90px;
+      height: 40px;
+      background-color: ${props => props.theme.colors.secondary};
+      color: #fff;
+      font-weight: bold;
+      font-size: 0.8rem;
+
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      transition: opacity .2s ease-in-out;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
     .title-type {
-      h2 {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-        span {
-          font-weight: normal;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      > div {
+        h2 {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+          span {
+            font-weight: normal;
+          }
         }
       }
+
       p {
         span {
           color: gray;

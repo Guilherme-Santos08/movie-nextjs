@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Container } from "./styles";
+import { useRouter } from "next/router";
 
 interface typeDetails {
   title: String;
@@ -24,6 +25,8 @@ export default function LayoutDetails({
   vote_average,
   genres,
 }: typeDetails) {
+  const router = useRouter();
+
   return (
     <Container>
       <section className="content">
@@ -32,20 +35,24 @@ export default function LayoutDetails({
         </div>
         <div className="info">
           <div className="title-type">
-            <h2>
-              {title}{" "}
-              <span>
-                (
-                {new Date(release_date).toLocaleDateString("pt-BR", {
-                  timeZone: "UTC",
-                })}
-                )
-              </span>
-            </h2>
-            <p>
-              <span>Categorias</span>: {genres.join(", ")} °
-            </p>
+            <div>
+              <h2>
+                {title}{" "}
+                <span>
+                  (
+                  {new Date(release_date).toLocaleDateString("pt-BR", {
+                    timeZone: "UTC",
+                  })}
+                  )
+                </span>
+              </h2>
+              <p>
+                <span>Categorias</span>: {genres.join(", ")} °
+              </p>
+            </div>
+            <button onClick={() => router.back()}>Voltar</button>
           </div>
+
           <div className="vote_average">
             <p>Avaliação do público: {vote_average}/10</p>
           </div>
