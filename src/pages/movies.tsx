@@ -5,6 +5,7 @@ import Head from "next/head";
 import LayoutFlexWrap from "../components/LayoutFlexWrap";
 import SideBar from "../components/NavBar";
 import CardContents from "../components/CardContents";
+
 import { useList } from "../hooks/useList";
 
 export default function Movies() {

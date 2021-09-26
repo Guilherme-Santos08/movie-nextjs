@@ -12,9 +12,9 @@ import { Container } from "../styles/pages/Home";
 import { cardContextProps } from "../interfaces/interfaces";
 
 interface MoviesProps {
-  movies?: any;
-  series?: any;
+  movies?: [] | any;
 }
+
 function Home({ movies }: MoviesProps) {
   const [series, setSeries] = useState([]);
 

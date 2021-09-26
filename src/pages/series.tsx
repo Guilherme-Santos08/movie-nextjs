@@ -9,7 +9,7 @@ import CardContents from "../components/CardContents";
 import { cardContextProps } from "../interfaces/interfaces";
 
 export default function Series() {
-  const { list, handleNextClick, handlePrevClick, pages, listSeries } = useList();
+  const { handleNextClick, handlePrevClick, pages, listSeries } = useList();
 
   return (
     <>
