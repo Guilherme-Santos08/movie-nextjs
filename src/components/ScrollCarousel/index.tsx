@@ -2,7 +2,12 @@ import { useRef, useState } from "react";
 
 import { Container } from "./styles";
 
-function ScrollCarousel({ children, name }) {
+interface ScrollCarouselProps {
+  children: React.ReactNode;
+  name: string;
+}
+
+function ScrollCarousel({ children, name }: ScrollCarouselProps) {
   return (
     <>
       <Container>

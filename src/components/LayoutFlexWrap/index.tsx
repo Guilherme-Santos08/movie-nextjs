@@ -18,7 +18,7 @@ export default function LayoutFlexWrap({
   pages,
   valueOption,
 }: LayoutChildren) {
-  const { selects, setSelects, searchMovies } = useList();
+  const { selects, setSelects } = useList();
 
   useEffect(() => {
     window.scrollTo(0, 0);

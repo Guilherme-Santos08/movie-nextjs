@@ -14,6 +14,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/SlideScroll/index.tsx", "src/pages/index.tsx", "src/pages/movies/[id].jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/SlideScroll/index.tsx", "src/pages/index.tsx", "src/pages/movies/[id].tsx"],
   "exclude": ["node_modules"]
 }

@@ -5,7 +5,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { apiMain, apiSearchMovies } from "../pages/api/api";
+import { apiMain } from "../pages/api/api";
 
 interface listProviderProps {
   children: ReactNode;
@@ -15,9 +15,9 @@ interface list {
   handlePrevClick: () => void;
   handleNextClick: () => void;
 
-  list: any;
-  listSeries: any;
-  setSelects: any;
+  list: [] | undefined;
+  setSelects: (selects: string) => void;
+  listSeries: [] | undefined;
 
   searchMovies: string | number | readonly string[] | undefined;
 
@@ -29,8 +29,8 @@ export const ListContext = createContext({} as list);
 
 export function ListContextProvider({ children }: listProviderProps) {
   const [pages, setPages] = useState(1);
-  const [list, setList] = useState([]);
-  const [listSeries, setListSeries] = useState([]);
+  const [list, setList] = useState();
+  const [listSeries, setListSeries] = useState();
   const [selects, setSelects] = useState("popular");
   const [searchMovies, setSearchMovies] = useState("");
   console.log(list)

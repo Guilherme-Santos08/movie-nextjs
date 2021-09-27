@@ -1,11 +1,27 @@
+import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
 import Head from "next/head";
 
 import LayoutDetails from "../../components/LayoutDetails";
 
-function MoviesId({ result }) {
+interface List {
+  name: string;
+  original_title: string;
+  release_date: string;
+  vote_average: string;
+  overview: string;
+  poster_path: string;
+  [genres: string]: any;
+  tagline: string;
+}
+
+interface ListProps {
+  result: List;
+}
+
+function MoviesId({ result }: ListProps) {
   console.log(result);
 
-   return (
+  return (
     <>
       <Head>
         <title>{result.name}</title>
@@ -16,16 +32,14 @@ function MoviesId({ result }) {
         vote_average={result.vote_average}
         overview={result.overview}
         poster_path={result.poster_path}
-        genres={result.genres.map(e => e.name)}
+        genres={result.genres.map((e: { name: String }) => e.name)}
         tagline={result.tagline}
       />
     </>
   );
 }
 
-export default MoviesId;
-
-export async function getServerSideProps(context) {
+export const getServerSideProps: GetServerSideProps = async context => {
   const { id } = context.query;
 
   const respMovie = await fetch(
@@ -38,4 +52,6 @@ export async function getServerSideProps(context) {
       result: data,
     },
   };
-}
+};
+
+export default MoviesId;
