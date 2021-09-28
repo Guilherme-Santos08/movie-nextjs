@@ -14,6 +14,7 @@ import { cardContextProps } from "../interfaces/interfaces";
 interface MoviesProps {
   movies?: [] | any;
 }
+alert("Projeto parado por um tempo!!!")
 
 function Home({ movies }: MoviesProps) {
   const [series, setSeries] = useState([]);
