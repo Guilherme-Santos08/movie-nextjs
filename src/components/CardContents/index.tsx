@@ -9,16 +9,25 @@ type CardImage = {
   image: any;
   link: Number;
   path: String;
+  onClick?: any;
 };
 
-export default function CardContents({ image, link, path }: CardImage) {
+export default function CardContents({
+  image,
+  link,
+  path,
+  onClick,
+}: CardImage) {
   return (
-    <Link href={`/${path}/[id]`} as={`/${path}/${link}`}>
-      <a>
-        <Container>
-          <img src={ImgMovie + image} alt="" />
-        </Container>
-      </a>
-    </Link>
+    <Container>
+      <Link href={`/${path}/[id]`} as={`/${path}/${link}`}>
+        <a>
+          <div className="card">
+            <img src={ImgMovie + image} alt="" />
+          </div>
+        </a>
+      </Link>
+      <button onClick={onClick}>Add favoritos</button>
+    </Container>
   );
 }

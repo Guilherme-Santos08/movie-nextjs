@@ -12,7 +12,7 @@ interface listContextProps {
 export const FavContext = createContext({} as listContextProps);
 
 export function FavContextProvider({ children }: favProviderProps) {
-  const [favorites, setFavorites] = useState();
+  const [favorites, setFavorites] = useState([]);
 
   return (
     <FavContext.Provider
