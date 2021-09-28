@@ -2,7 +2,7 @@ import Head from "next/head";
 import LayoutDetails from "../../components/LayoutDetails";
 
 function SeriesDetails({ result }) {
-  console.log(result)
+  // console.log(result)
   return (
     <>
       <Head>

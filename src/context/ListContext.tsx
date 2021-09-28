@@ -15,7 +15,7 @@ interface list {
   handlePrevClick: () => void;
   handleNextClick: () => void;
 
-  list: [] | undefined;
+  list: [] | any;
   setSelects: (selects: string) => void;
   listSeries: [] | undefined;
 
@@ -33,7 +33,7 @@ export function ListContextProvider({ children }: listProviderProps) {
   const [listSeries, setListSeries] = useState();
   const [selects, setSelects] = useState("popular");
   const [searchMovies, setSearchMovies] = useState("");
-  console.log(list)
+  // console.log(list)
 
   // Paginas dos Filmes
   useEffect(() => {

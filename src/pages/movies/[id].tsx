@@ -19,7 +19,7 @@ interface ListProps {
 }
 
 function MoviesId({ result }: ListProps) {
-  console.log(result);
+  // console.log(result);
 
   return (
     <>
