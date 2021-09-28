@@ -27,7 +27,6 @@ export default function CardContents({
           </div>
         </a>
       </Link>
-      <button onClick={onClick}>Add favoritos</button>
     </Container>
   );
 }

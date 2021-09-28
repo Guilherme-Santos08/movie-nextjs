@@ -5,9 +5,9 @@ import { Container } from "./styles";
 
 interface LayoutChildren {
   children: React.ReactNode;
-  handlePrevClick: () => void;
-  handleNextClick: () => void;
-  pages: Number;
+  handlePrevClick?: () => void;
+  handleNextClick?: () => void;
+  pages?: Number;
   valueOption?: string | number | readonly string[] | undefined;
 }
 

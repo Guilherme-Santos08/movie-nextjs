@@ -5,13 +5,12 @@ import CardContents from "../components/CardContents";
 import SideBar from "../components/NavBar";
 import { useFav } from "../hooks/useFav";
 
-export default function People() {
+export default function Favorites() {
   const { favorites } = useFav();
   console.log(favorites);
   return (
     <>
       <SideBar />
-
       {favorites.length > 0 &&
         favorites.map((movie: cardContextProps, index: Key) => (
           <CardContents

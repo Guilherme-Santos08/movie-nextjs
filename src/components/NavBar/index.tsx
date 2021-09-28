@@ -100,7 +100,7 @@ export default function SideBar() {
           />
           <CardNav
             routers="/people"
-            text="Pessoas"
+            text="Favorites"
             svg={
               <svg
                 aria-hidden="true"
