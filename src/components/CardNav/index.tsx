@@ -9,7 +9,7 @@ import { Container } from "./styles";
 type CardNavProps = {
   text?: String;
   svg: any;
-  routers: String;
+  routers?: any;
 };
 
 export default function CardNav({ text, svg, routers }: CardNavProps) {

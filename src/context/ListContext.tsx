@@ -17,7 +17,7 @@ interface list {
 
   list: [] | any;
   setSelects: (selects: string) => void;
-  listSeries: [] | undefined;
+  listSeries: [] | undefined | any;
 
   searchMovies: string | number | readonly string[] | undefined;
 
