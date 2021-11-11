@@ -25,7 +25,7 @@ Primeiro clone o repositório.
 
 ```bash
 $ git clone https://github.com/rocketseat-education/nlw-06-reactjs
-Abra o terminal de sua prefência dentro da pasta clonada
+# Abra o terminal de sua prefência dentro da pasta clonada
 ```
 
 Para iniciá-lo, siga os passos abaixo:
